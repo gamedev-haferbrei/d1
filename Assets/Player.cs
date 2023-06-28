@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] float customGravity;
 
+    [SerializeField] GameObject dustParticlesPrefab;
+
     int availableJumps = 2;
 
     bool godMode;
@@ -82,6 +84,13 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.GetContact(0).normal.y > 0.3) availableJumps = 2;
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (godMode || dir.magnitude < 0.1) return;
+        ContactPoint contact = collision.GetContact(0);
+        if (contact.normal.y > 0.3) Instantiate(dustParticlesPrefab, contact.point, Quaternion.Euler(-90f, 0, 0));
     }
 
     // Update is called once per frame
