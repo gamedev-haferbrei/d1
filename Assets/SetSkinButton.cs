@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SetSkinButton : MonoBehaviour
 {
-    [SerializeField] Texture texture;
+    [SerializeField] int textureIndex;
 
-    void SetTexture()
+    public void SetTexture()
     {
-        Globals.playerTexture = texture;
+        Globals.textureIndex = textureIndex;
     }
 }

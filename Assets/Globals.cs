@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Globals
 {
-    public static Texture playerTexture;
+    public static int textureIndex;
 }

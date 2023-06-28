@@ -855,6 +855,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5596429a2ab7ab24fb25d285375c039e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMaterial: {fileID: 2100000, guid: 23899cbe664972743a7d5b5409dee4b1, type: 2}
+  textures:
+  - {fileID: 2800000, guid: 0663e02421b08d8498afda67462e02c3, type: 3}
+  - {fileID: 2800000, guid: a180f0cdc6bc61c468875bdafc2c52b1, type: 3}
+  - {fileID: 2800000, guid: 0663e02421b08d8498afda67462e02c3, type: 3}
 --- !u!4 &1388552776
 Transform:
   m_ObjectHideFlags: 0
