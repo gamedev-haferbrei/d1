@@ -11,7 +11,7 @@ public class Switch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -21,6 +21,8 @@ public class Switch : MonoBehaviour
             if (triggers is ITriggerable) ((ITriggerable)triggers).Trigger();
             pressed = true;
             GetComponent<Renderer>().material = onMaterial;
+            transform.position = new Vector3(transform.position.x, transform.position.y - 0.15f, transform.position.z);
+
         }
     }
 
