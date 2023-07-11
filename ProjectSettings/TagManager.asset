@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Item
+  - Magic1
+  - Magic2
+  - Magic3
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ public class Switch : MonoBehaviour
 {
     [SerializeField] Material onMaterial;
     [SerializeField] Component triggers;
-    bool pressed = false;
+    public bool pressed = false;
 
     // Start is called before the first frame update
     void Start()

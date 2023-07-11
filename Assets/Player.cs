@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] float godModeSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] float customGravity;
+    [SerializeField] string levelName;
 
     [SerializeField] GameObject dustParticlesPrefab;
 
@@ -19,16 +22,19 @@ public class Player : MonoBehaviour
     Rigidbody rb;
 
     Vector3 dir;
+    Vector3 startPos;
 
     private void Awake()
     {
         controls = new InputActions();
+         
     }
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        startPos = rb.position;
     }
 
     private void OnEnable()
@@ -93,9 +99,45 @@ public class Player : MonoBehaviour
         if (contact.normal.y > 0.3) Instantiate(dustParticlesPrefab, contact.point, Quaternion.Euler(-90f, 0, 0));
     }
 
+    /*void Death()
+    {
+        if (Input.GetKeyDown("K"))
+        {
+            Debug.Log("position!");
+            //rb.position = startPos;
+            /*GameObject magic1f = GameObject.FindWithTag("Magic1");        rb.position.y <= -1f
+            GameObject magic2f = GameObject.FindWithTag("Magic2");
+            GameObject magic3f = GameObject.FindWithTag("Magic3");
+            Switch magic1 = magic1f.GetComponent<Switch>();
+            Switch magic2 = magic2f.GetComponent<Switch>();
+            Switch magic3 = magic3f.GetComponent<Switch>();
+            magic1.pressed = false;
+            magic2.pressed = false;
+            magic3.pressed = false;
+            SceneManager.LoadScene(levelName);
+        }
+    }*/
+    //}
+    //}
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("k"))
+        {
+            Debug.Log("position!");
+            //rb.position = startPos;
+            /*GameObject magic1f = GameObject.FindWithTag("Magic1");        rb.position.y <= -1f
+            GameObject magic2f = GameObject.FindWithTag("Magic2");
+            GameObject magic3f = GameObject.FindWithTag("Magic3");
+            Switch magic1 = magic1f.GetComponent<Switch>();
+            Switch magic2 = magic2f.GetComponent<Switch>();
+            Switch magic3 = magic3f.GetComponent<Switch>();
+            magic1.pressed = false;
+            magic2.pressed = false;
+            magic3.pressed = false;*/
+            SceneManager.LoadScene(levelName);
+        }
+
+
     }
 }
