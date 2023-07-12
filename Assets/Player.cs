@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
     [SerializeField] float customGravity;
     [SerializeField] string levelName;
 
+    [SerializeField] AudioSource jumpSource;
+    [SerializeField] AudioClip jumpClip;
+
     //[SerializeField] GameObject coll;
     [SerializeField] GameObject dustParticlesPrefab;
 
@@ -51,6 +54,7 @@ public class Player : MonoBehaviour
         {
             if (availableJumps > 0)
             {
+                jumpSource.PlayOneShot(jumpClip);
                 rb.AddForce(jumpForce * Vector3.up);
                 availableJumps--;
             }

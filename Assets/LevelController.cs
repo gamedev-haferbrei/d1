@@ -12,6 +12,9 @@ public class LevelController : MonoBehaviour
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] TextMeshProUGUI bestText;
 
+    [SerializeField] AudioSource itemSource;
+    [SerializeField] AudioClip itemClip;
+
     int totalItemCount = 0;
     public int itemCount = 0;
     public float ttime;
@@ -41,6 +44,7 @@ public class LevelController : MonoBehaviour
 
     public void OnItemCollected()
     {
+        itemSource.PlayOneShot(itemClip);
         itemCount--;
         UpdateItemText();
         if (itemCount == 0)

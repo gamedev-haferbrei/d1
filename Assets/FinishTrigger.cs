@@ -7,6 +7,9 @@ public class FinishTrigger : MonoBehaviour
 {
     [SerializeField] LevelController lvlctrl;
 
+    //[SerializeField] AudioSource finishSource;
+    //[SerializeField] AudioClip finishClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,7 @@ public class FinishTrigger : MonoBehaviour
             {
                 PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name, lvlctrl.ttime); 
             }
+            //finishSource.PlayOneShot(finishClip);
             StartCoroutine(EndGame());
         }
     }
