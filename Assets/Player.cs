@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] float customGravity;
     [SerializeField] string levelName;
 
+    //[SerializeField] GameObject coll;
     [SerializeField] GameObject dustParticlesPrefab;
 
     int availableJumps = 2;
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
     bool godMode;
     InputActions controls;
     Rigidbody rb;
+    //CapsuleCollider cc;
 
     Vector3 dir;
     Vector3 startPos;
@@ -35,6 +37,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         startPos = rb.position;
+        //cc = coll.GetComponent<CapsuleCollider>();
     }
 
     private void OnEnable()
@@ -66,6 +69,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //coll.transform.position = new Vector3(transform.position.x, transform.position.y-0.05f, transform.position.z);
         if (godMode)
         {
             rb.position += godModeSpeed * dir;
