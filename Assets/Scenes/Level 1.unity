@@ -4265,7 +4265,7 @@ MonoBehaviour:
   textures:
   - {fileID: 2800000, guid: 0663e02421b08d8498afda67462e02c3, type: 3}
   - {fileID: 2800000, guid: a180f0cdc6bc61c468875bdafc2c52b1, type: 3}
-  - {fileID: 2800000, guid: 0663e02421b08d8498afda67462e02c3, type: 3}
+  - {fileID: 2800000, guid: 26f25b264a8519a47ba8f3ebb4ecef69, type: 3}
   itemsText: {fileID: 1318360958}
   timeText: {fileID: 888739472}
   bestText: {fileID: 1847855535}
