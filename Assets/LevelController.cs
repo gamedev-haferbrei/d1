@@ -65,7 +65,7 @@ public class LevelController : MonoBehaviour
         }
         else
         {
-            bestText.text = "";
+            bestText.text = "-";
         }
     }
 }

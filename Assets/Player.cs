@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        Debug.Log(rb.name);
         startPos = rb.position;
     }
 
@@ -64,6 +65,10 @@ public class Player : MonoBehaviour
         {
             if (godMode) DisableGodMode();
             else EnableGodMode();
+        };
+        controls.Player.Restart.performed += (ctx) =>
+        {
+            SceneManager.LoadScene("Menu");
         };
         controls.Enable();
     }
@@ -126,11 +131,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("k"))
+        /*if (Input.GetKeyDown("k"))
         {
             Debug.Log("position!");
             //rb.position = startPos;
-            /*GameObject magic1f = GameObject.FindWithTag("Magic1");        rb.position.y <= -1f
+            GameObject magic1f = GameObject.FindWithTag("Magic1");        rb.position.y <= -1f
             GameObject magic2f = GameObject.FindWithTag("Magic2");
             GameObject magic3f = GameObject.FindWithTag("Magic3");
             Switch magic1 = magic1f.GetComponent<Switch>();
@@ -138,10 +143,10 @@ public class Player : MonoBehaviour
             Switch magic3 = magic3f.GetComponent<Switch>();
             magic1.pressed = false;
             magic2.pressed = false;
-            magic3.pressed = false;*/
+            magic3.pressed = false;
             SceneManager.LoadScene(levelName);
         }
-
-
+    
+        */
     }
 }
