@@ -8,6 +8,7 @@ TagManager:
   - Magic1
   - Magic2
   - Magic3
+  - Ground
   layers:
   - Default
   - TransparentFX
