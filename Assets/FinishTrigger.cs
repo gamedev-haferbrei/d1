@@ -6,14 +6,15 @@ using UnityEngine.SceneManagement;
 public class FinishTrigger : MonoBehaviour
 {
     [SerializeField] LevelController lvlctrl;
+    
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip finishClip;
 
-    //[SerializeField] AudioSource finishSource;
-    //[SerializeField] AudioClip finishClip;
-
+    bool firstTime;
     // Start is called before the first frame update
     void Start()
     {
-        
+        firstTime = true;
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -23,14 +24,20 @@ public class FinishTrigger : MonoBehaviour
             if (PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name) > lvlctrl.ttime || PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name) == 0)
             {
                 PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name, lvlctrl.ttime); 
+            } 
+            if (firstTime)
+            {
+                audioSource.Stop();
+                audioSource.PlayOneShot(finishClip);
+                firstTime = false;
             }
-            //finishSource.PlayOneShot(finishClip);
             StartCoroutine(EndGame());
         }
     }
 
     IEnumerator EndGame()
     {
+        
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene("Menu");
     }

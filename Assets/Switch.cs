@@ -7,7 +7,7 @@ public class Switch : MonoBehaviour
     [SerializeField] Material onMaterial;
     [SerializeField] Component triggers;
 
-    [SerializeField] AudioSource buttonSource;
+    [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip buttonClip;
 
     public bool pressed = false;
@@ -22,7 +22,7 @@ public class Switch : MonoBehaviour
     {
         if (!pressed && collision.gameObject.CompareTag("Player"))
         {
-            buttonSource.PlayOneShot(buttonClip);
+            audioSource.PlayOneShot(buttonClip);
             if (triggers is ITriggerable) ((ITriggerable)triggers).Trigger();
             pressed = true;
             GetComponent<Renderer>().material = onMaterial;
