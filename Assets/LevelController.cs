@@ -18,13 +18,15 @@ public class LevelController : MonoBehaviour
     int totalItemCount = 0;
     public int itemCount = 0;
     public float ttime;
+    public bool hasFinished;
     float bestTime;
 
     // Start is called before the first frame update
     void Start()
     {
         timeText.text = "0";
-        bestText.color = Color.red;
+        bestText.color = Color.green;
+        hasFinished = false;
 
         playerMaterial.mainTexture = textures[Globals.textureIndex];
 
@@ -58,13 +60,15 @@ public class LevelController : MonoBehaviour
     {
         ttime = Time.timeSinceLevelLoad;
         bestTime = PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name);
-        timeText.text = ttime.ToString("F2") + " ";
+        if (ttime > bestTime && !hasFinished) bestText.color = Color.red;
+        if (!hasFinished) timeText.text = ttime.ToString("F2") + " ";
         if (bestTime != 0) 
         {
             bestText.text = " " + bestTime.ToString("F2");
         }
         else
         {
+            bestText.color = Color.green;
             bestText.text = "-";
         }
     }

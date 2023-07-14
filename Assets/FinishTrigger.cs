@@ -31,6 +31,7 @@ public class FinishTrigger : MonoBehaviour
                 audioSource.PlayOneShot(finishClip);
                 firstTime = false;
             }
+            lvlctrl.hasFinished = true;
             StartCoroutine(EndGame());
         }
     }
