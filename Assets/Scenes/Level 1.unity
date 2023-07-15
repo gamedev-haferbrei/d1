@@ -2290,7 +2290,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1, y: 0, z: 1, w: 0}
+  m_margin: {x: 0, y: 0, z: 10, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3283,7 +3283,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1, y: 1, z: 1, w: 0}
+  m_margin: {x: 0, y: 10, z: 10, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4832,6 +4832,7 @@ MonoBehaviour:
   itemClip: {fileID: 8300000, guid: 5162c72250934b3458ac0c58b8d33a28, type: 3}
   itemCount: 0
   ttime: 0
+  hasFinished: 0
 --- !u!4 &1388552776
 Transform:
   m_ObjectHideFlags: 0
